@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <main class="container">
+        <h1 class="heading__primary">Vending Machine</h1>
+        <section class="machine">
+            <div class="machine__products" id="product-list"></div>
+            <div class="machine__screen">
+                <div class="machine__output">
+                    <p class="machine__output--text" id="output">
+                        Output
+                    </p>
+                    <span class="machine__balance">0</span>
+                </div>
+                
+                <form class="machine__form" onsubmit="return false">
+                        <input 
+                            type="text" 
+                            placeholder="Add coins" 
+                            name="amount" 
+                            id="amount"
+                            pattern="^5|10|25$"
+                            required
+                        >
+                        <p class="error--message">Only 5&cent;, 10&cent;, and 25&cent;</p>
+                    <button type="button" class="btn" id="submit">Add</button>
+                </form>
+            </div>
+        </section>
+        <a href="#popup" id="admin-add" class="btn add-product">Add Product</a>
+    </main>
+
+    <div class="popup" id="popup">
+        <form class="form" id="form">
+            <div class="form__header">
+                    <h2 class="form__header-text">Add More Products</h2>
+            </div>
+            <input class="form__radio-input" type="checkbox" name="new" id="new" checked>
+            <label for="new" class="form__radio-label">
+                <span class="form__radio-button"></span>
+                New Product
+            </label>
+            <div class="form__group">
+                <input class="form__input"type="text" name="name" id="name" placeholder="Name" required>
+                <label class="form__label" for="name">Name</label>
+            </div>
+            <div class="form__group form__group--new">
+                    <input class="form__input"type="text" name="price" id="price" placeholder="Price">
+                    <label class="form__label" for="price">Price</label>
+            </div>
+            <div class="form__group">
+                <input class="form__input"type="number" min="0" name="amount" id="product_amount" placeholder="Amount" required>
+                <label class="form__label" for="product_amount">Amount</label>
+            </div>
+            <div class="form__group form__group--new">
+                <input class="form__input"type="number" min="1" name="limit" id="limit" placeholder="Limit">
+                <label class="form__label" for="limit">Limit</label>
+            </div>
+            <button id="form__btn-submit"></button>
+            <a href="#" class="btn product-submit" id="product-submit">Submit</a>
+        </form>
+    </div>
+    
+</body>
+</html>

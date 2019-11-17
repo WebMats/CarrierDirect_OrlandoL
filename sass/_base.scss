@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    @media screen and (max-width: 31.25em) {
+        font-size: 50%;
+    }
+    font-family: sans-serif;
+    color: #444;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: orangered;
+}
+
+.error--message {
+    visibility: hidden;
+    text-transform: lowercase;
+    font-size: 1rem;
+}
+
+input {
+    &:not(:placeholder-shown):invalid {
+        border-color: red;
+        & + .error--message{
+            visibility: initial;
+            color: red;
+        }
+    }
+    &:not(:placeholder-shown):valid {
+        border-color: green;
+    }
+}
