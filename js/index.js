@@ -51,7 +51,8 @@ function handleProductFormSubmission(e) {
     e.target.reset();
     // can send values to be checked for validity before adding.
     const newProduct = vendingMachine.adminAddProduct(values);
-    if (!newProduct.name) return;
-    const newEl = appendProduct(newProduct.name, newProduct._id, productsListElement);
-    newEl.addEventListener('click', handleProductClick);
+    if (newProduct && newProduct.name) {
+        const newEl = appendProduct(newProduct.name, newProduct._id, productsListElement);
+        newEl.addEventListener('click', handleProductClick);
+    };
 }
